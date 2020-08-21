@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list {
+            width: 250px;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        #list td,
+        #list th {
+            font-size: 1em;
+            border: 1px solid #233B58;
+            padding: 0 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<table id="list">
+    <tr>
+        <td colspan="2">相电压</td>
+    </tr>
+    <tr>
+        <td>A电压</td>
+        <td>220v</td>
+    </tr>
+    <tr>
+        <td>A电压</td>
+        <td>220v</td>
+    </tr>
+    <tr>
+        <td>A电压</td>
+        <td></td>
+    </tr>
+</table>
+
+<script>
+    function getRandom(max, min) {
+        return Math.random() * (max - min) + min;
+    }
+
+    console.log(getRandom(2,6));
+</script>
+
+</html>

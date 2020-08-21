@@ -1,0 +1,56 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-05 16:52:30
+ * @LastEditTime: 2020-07-05 16:58:49
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \interview\cleanFloat\test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            border: 1px solid #000;
+            background-color: #aaa;
+        }
+
+        .left {
+            width: 100px;
+            height: 100px;
+            background-color: #ffff00;
+            float: left;
+
+        }
+
+        .right {
+            width: 100px;
+            height: 100px;
+            background-color: #fa0000;
+            float: right;
+        }
+        .clearfix{
+            zoom: 1;
+        }
+        .clearfix:after{
+            content: "";
+            clear: both;
+            display: block;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container clearfix">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

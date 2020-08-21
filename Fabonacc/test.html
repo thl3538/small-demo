@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-05 17:23:01
+ * @LastEditTime: 2020-07-05 17:30:00
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \interview\Fabonacc\test.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fabonacc(n){
+            if(n <= 1) {return 1};
+            return fabonacc(n - 1) + fabonacc(n - 2);
+        }
+        let res = fabonacc(5);
+        console.log(res);
+
+        function fabonacc1(n){
+            if(n === 1 || n === 2){
+                return 1;
+            }
+            let n1 = 1;
+            let n2 = 2;
+            for(let i = 2; i < n; i++){
+                [n1, n2] = [n2, n1 + n2];
+            }
+            return n2;
+        }
+
+        let res1 = fabonacc1(5);
+        console.log(res1);
+    </script>
+</body>
+</html>
