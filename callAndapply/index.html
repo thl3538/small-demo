@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		//call
+		Function.prototype.myCall = function (context) {
+			console.log(this)
+			//此处没有考虑context非object情况
+			context.fn = this;
+			let args = [];
+			for (let i = 1, len = arguments.length; i < len; i++) {
+				args.push(arguments[i]);
+			}
+			context.fn(...args);
+			let result = context.fn(...args);
+			delete context.fn;
+			return result;
+		};
+
+		Function.prototype.myApply = function (context = window, ...args) {
+			let func = this;
+			let fn = Symbol("fn");
+			context[fn] = func;
+
+			let res = context[fn](...args); //重点代码，利用this指向，相当于context.caller(...args)
+
+			delete context[fn];
+			return res;
+		}
+
+
+		// 测试用例
+		var foo = {
+			name: 'zl'
+		}
+
+		function func(job, age) {
+			console.log(this.name);
+			console.log(job, age);
+		}
+
+		func.myCall(foo, "worker", 45); //zl coder 45
+		func.myCall(foo, "worker", 45); 
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function unique(arr) {
+            if (!Array.isArray(arr)) {
+                console.log("type error")
+            }
+            return arr.filter((item, index) => {
+                return arr.indexOf(item) === index;
+            })
+        }
+
+        function unique2(arr) {
+            let newArray = []
+            arr.forEach(item => {
+                if(newArray.indexOf(item) === -1) {
+                    newArray.push(item);
+                }
+            });
+            return newArray();
+        }
+
+        function unique3(arr) {
+            return Array.from(new Set(arr));
+        }
+    </script>
+</body>
+</html>
