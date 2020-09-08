@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            width: 100%;
+            position: relative;
+        }
+        .left {
+            width: 100px;
+            background: chartreuse;
+            position: absolute;
+        }
+        .right {
+            background: blue;
+            position: absolute;
+            /* top: 0;
+            right: 0;
+            left: 100px; */
+            margin-left: 100px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="left">我是左边</div>
+        <div class="right">我是右边</div>
+    </div>
+    <script>
+        
+    </script>
 </body>
+
 </html>

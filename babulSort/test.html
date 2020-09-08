@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        // 冒泡排序
         function babelSort(arr){
             for(var i = 0; i < arr.length - 1; i++){
                 for(var j = 0; j < arr.length - i - 1; j++){
@@ -22,6 +23,32 @@
         }
         let result = babelSort([1, 2, 5, 4]);
         console.log(result);
+
+
+        // 插入排序
+        function insert(arr) {
+            let newArray = [];
+            newArray.push(arr[0]);
+
+            for(let i = 1; i < arr.length; i++) {
+                let A = arr[i];
+                for(let j = newArray.length - 1; j >= 0; j--) {
+                    let B = newArray[j];
+                    if(A > B) {
+                        newArray.splice(j+1, 0, A);
+                        break;
+                    }
+
+                    if(j === 0) {
+                        newArray.unshift(A);
+                    }
+                }
+            }
+            return newArray;
+        }
+
+        let result1 = [1,2,3,4];
+        console.log(insert(result1));
     </script>
 </body>
 </html>

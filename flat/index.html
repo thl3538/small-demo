@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,[1,2],[1,2,3,[1,2,3]]]
+        // es6方式直接实现
+        // arr = arr.flat(Infinity)
+        // 转化为字符串
+        // arr = arr.toString().split(',').map(item => parseFloat(item));
+
+
+        // 使用reduce
+        function flatten(arr) {
+            return arr.reduce((result, item) => {
+                return result.concat(Array.isArray(item) ? flatten(item) : item)
+            }, [])
+        }
+        console.log(flatten(arr));
+        console.log([].concat(...arr))
+    </script>
+</body>
+</html>

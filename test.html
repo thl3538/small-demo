@@ -12,46 +12,8 @@
         <button class="btn">按钮</button>
     </div>
     <script>
-        var btn = document.getElementsByClassName("btn")[0];
-        btn.addEventListener("click", () => {
-            test()
-        })
-
-        function test() {
-            console.log(123)
-        }
-
-        var test = throttle(test, 1000);
-
-        //防抖
-        function debounce(fn, delay) {
-            let timer; // 维护一个 timer
-            return function () {
-                // let _this = this; // 取debounce执行作用域的this
-                let args = arguments;
-                if (timer) {
-                    clearTimeout(timer);
-                }
-                timer = setTimeout(() => {
-                    fn.apply(this, args); // 用apply指向调用debounce的对象，相当于this.fn(args);
-                }, delay);
-            };
-        }
-
-        //节流
-        function throttle(fun, delay) {
-            let timer;
-            let last = 0;
-            return function () {
-                let _that = this;
-                let args = arguments;
-                let now = +new Date();
-                if (now - last > delay) {
-                    last = now;
-                    fun.call(_that, args);
-                }
-            }
-        }
+        const arr = new Array(100);
+        console.log([...arr.keys()])
     </script>
 </body>
 
